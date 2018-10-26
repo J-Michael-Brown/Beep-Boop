@@ -90,7 +90,8 @@ $(function() {
     var nameCheck = $("#user-name").val();
     if (nameCheck) {
       sorryName = nameCheck;
-      $("#greetings").text("Hi there, " + sorryName + ".").show();
+      $("#hal").removeClass();
+      $("#greetings").text("Hello, " + sorryName + ".").show();
     }
 
     event.preventDefault();
@@ -115,7 +116,7 @@ $(function() {
     } else if (userInputInterger < 0) {
       $("#tooLittle").show();
     } else {
-      $("#hal").removeClass();
+
 
       $("#number-array").text(cleanArray(arrayOutput)).slideToggle(10*(arrayOutput.length));
 

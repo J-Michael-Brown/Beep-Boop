@@ -7,11 +7,20 @@ body {
 
 .container {
   max-width: 1000px;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 #cool-button {
-  background-color: orange;
+  background-color: #27D921;
+}
+
+#cool-button:hover {
+  background-color: #146411;
+}
+
+#greetings {
+  display: none;
+  color: #27D921;
 }
 
 .results {
@@ -51,9 +60,5 @@ body {
 }
 
 .message {
-  display: none;
-}
-
-#greetings {
   display: none;
 }
