@@ -82,7 +82,7 @@ function cleanArray(messyArray) {
 }
 
 function detectShutdown(loginName) {
-  var shutDownCommand  = ["log off", "log out", "logout", "shutdown", "off", "logoff", "quite", "q", "open pod bay doors", "open the pod bay doors", "exit"];
+  var shutDownCommand  = ["log off", "log out", "logout", "shutdown", "off", "logoff", "quit", "q", "open pod bay doors", "open the pod bay doors", "exit"];
 
 
   for (var i = 0; i < shutDownCommand.length; i++) {

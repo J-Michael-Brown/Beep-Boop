@@ -24,9 +24,24 @@ _Example Input: "10"_
 _Example Output: "Boop!"_  
 _Example Input: "30"_  
 _Example Output: "I'm sorry, Dave. I'm afraid I can't do that."_
-* _**Program takes a number from a user and returns a range of numbers from 0 to the user inputted number with the aforementioned exceptions**_  
+* _**Program takes a number from a user and returns a range of numbers from 0 to the user inputted number with the aforementioned specifications**_  
 _Example Input: "5"_  
-_Example Output: "Beep!, Boop!, 2, I'm sorry, Dave. I'm afraid I can't do that., 4, 5"_
+_Example Output: "Beep!", "Boop!", 2, "I'm sorry, Dave. I'm afraid I can't do that.", 4, 5"_
+
+
+## Additional specifications
+* _**Program takes a number from a user and returns a range of numbers from the user inputted number to 0 with the aforementioned specifications**_  
+_Example Input: "5"_  
+_Example Output: '5, 4, "I'm sorry, Dave. I'm afraid I can't do that.", 2, "Boop!", "Beep!"'_
+* _**Program takes a name from a user and returns greeting.**_  
+_Example Input: "John"_  
+_Example Output: "Hello, John."_
+* _**Program takes a name from alters "I'm sorry, 'Dave'..." message to use the inputed name.**_  
+_Example Input: "John"_  
+_Example Output (when applicable): "I'm sorry, John. I'm afraid I can't do that."_
+* _**In login/logout field, if the user has already logged in, they may input a log out message to turn Hal 900 'off'.**_  
+_Example Input: "quit"_  
+_Expected Results: Image of Hal will dim, greeting message will disappear, login name will not be used in return array while 'logged out'._
 
 
 ## Setup/Installation Requirements

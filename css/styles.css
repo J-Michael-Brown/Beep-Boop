@@ -16,6 +16,7 @@ body {
 
 #cool-button:hover {
   background-color: #146411;
+    border-color: #27D921;
 }
 
 #greetings {
@@ -33,6 +34,18 @@ body {
 
 #button-div button {
   margin: 15px;
+}
+
+.btn-primary {
+  background-color: #27D921;
+  border-color: #146411;
+  color: black;
+}
+
+.btn-primary:hover {
+  background-color: #146411;
+  border-color: #27D921;
+  color: white;
 }
 
 .result-image .message {
