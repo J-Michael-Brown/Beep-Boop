@@ -63,28 +63,26 @@ $(function() {
   $("#formOne").submit(function(event) {
     event.preventDefault();
 
-    var array = [];
-    // console.log(array = numberToComputerArray(10));
+    var arrayOutput = [];
     var userInput = $("#romans").val();
-    console.log(numberConverter(userInput));
-    console.log(numberToComputerArray(userInput));
+    var userInputInterger = parseInt(userInput);
+    var finalOutputOfArray = numberConverter(userInput);
+    arrayOutput = numberToComputerArray(userInput);
 
+    $(".message").hide();
 
-
-
-    // var trojanHorse = $("#romans").val();
-    //
-    // $(".error-message").hide();
-    // if (parseInt(trojanHorse) >= 4000) {
+    if (!userInputInterger) {
+      $("#justWrong").show();
+    } else if (userInputInterger < 0) {
+      $("#tooLittle").show();
+    // } else if (userInputInterger) >= 4000) {
     //   $("#tooBig").show();
-    // } else if (parseInt(trojanHorse) < 0) {
-    //   $("#tooLittle").show();
-    // } else if (!parseInt(trojanHorse)) {
-    //   $("#justWrong").show();
-    // } else {
-    //   $(".charriot").slideDown(5000);
-    //   $("#roman-numeral").text(numberToComputerArray(trojanHorse)).show();
-    // }
+    } else {
+      $("#final-output").text(finalOutputOfArray).show();
+      $("#number-array").text(arrayOutput).show();
+    }
+
+
 
 
   })
