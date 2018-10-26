@@ -99,6 +99,7 @@ $(function() {
 
   $("#LtoG").click(function(event) {
 
+
     var arrayOutput = [];
     var userInput = $("#user-number").val();
     var userInputInterger = parseInt(userInput);
@@ -106,6 +107,8 @@ $(function() {
     arrayOutput = numberToComputerArray(userInput, sorryName);
 
     $(".message").hide();
+    $("form").toggle();
+    $("#do-it-again").toggle();
 
     if (!userInputInterger) {
       $("#justWrong").show();
@@ -130,16 +133,27 @@ $(function() {
     arrayOutput = numberToComputerArrayReverse(userInput, sorryName);
 
     $(".message").hide();
+    $("form").toggle();
+    $("#do-it-again").toggle();
 
+    // if (userInputInterger === 1) {
+    //   $("#hal").removeClass();
+    // } else if (userInputInterger === 0) {
+    //   $(".results#hal").addClass(".low-opacity");
+    // }
     if (!userInputInterger) {
       $("#justWrong").show();
     } else if (userInputInterger < 0) {
       $("#tooLittle").show();
     } else {
-      $("#hal").removeClass();
       $("#number-array").text(cleanArray(arrayOutput)).slideToggle(10*(arrayOutput.length));
     }
 
+  });
+
+  $("#do-it-again").click(function(event) {
+    $("form").toggle();
+    $("#do-it-again").toggle();
   });
 
 });

@@ -2,11 +2,28 @@ body {
   background-color: black;
   color: white;
   height: 100%;
+  text-align: center;
 }
+
+.container {
+  max-width: 1000px;
+  margin-top: 5px;
+}
+
+#cool-button {
+  background-color: orange;
+}
+
 .results {
+  margin: 20px;
+  max-width: 930px;
   position: relative;
   text-align: center;
   height: 100%
+}
+
+#button-div button {
+  margin: 15px;
 }
 
 .result-image .message {
@@ -27,6 +44,10 @@ body {
 
 .high-opacity {
   opacity: 1.0;
+}
+
+#do-it-again {
+  display: none;
 }
 
 .message {
