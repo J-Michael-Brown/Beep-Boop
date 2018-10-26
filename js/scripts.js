@@ -25,12 +25,14 @@ function parseOneOrZero(numToParse) {
 
 function numberConverter(numToConvert, userName) {
 
-  var dave = userName;
+  // debugger;
+  var dave = "Dave";
+  if (userName) {
+    dave = userName;
+  }
   var computerResponse = ['"Beep!"','"Boop!"',('"I\'m sorry, ' + dave + '. I\'m afraid I can\'t do that."')]
 
   if (numToConvert > 0 && numToConvert%3 === 0) {
-    console.log(userName)
-    debugger;
     return computerResponse[2]
 
   } else if (parseOneOrZero(numToConvert) === 1) {
@@ -44,25 +46,25 @@ function numberConverter(numToConvert, userName) {
   }
 }
 
-function numberToComputerArray(numberString) {
+function numberToComputerArray(numberString, userName) {
 
   var number = parseInt(numberString);
   var results= [];
 
   for (var i = 0; i <= number; i++) {
-    results.push(numberConverter(i));
+    results.push(numberConverter(i, userName));
 
   }
   return results;
 }
 
-function numberToComputerArrayReverse(numberString) {
+function numberToComputerArrayReverse(numberString, userName) {
 
   var number = parseInt(numberString);
   var results= [];
 
   for (var i = 0; i <= number; i++) {
-    results.unshift(numberConverter(i));
+    results.unshift(numberConverter(i, userName));
 
   }
   return results;
@@ -95,14 +97,14 @@ $(function() {
   });
 
   $("#LtoG").click(function(event) {
-    event.preventDefault();
     // console.log(sorryName);
 
+    var useName = sorryName;
     var arrayOutput = [];
     var userInput = $("#user-number").val();
     var userInputInterger = parseInt(userInput);
-    var finalOutputOfArray = numberConverter(userInput, sorryName);
-    arrayOutput = numberToComputerArray(userInput);
+    var finalOutputOfArray = numberConverter(userInput, useName);
+    arrayOutput = numberToComputerArray(userInput, useName);
 
     $(".message").hide();
 
@@ -114,6 +116,7 @@ $(function() {
       $("#number-array").text(cleanArray(arrayOutput)).show();
     }
 
+    event.preventDefault();
   })
   $("#GtoL").click(function(event) {
     event.preventDefault();
@@ -122,7 +125,7 @@ $(function() {
     var userInput = $("#user-number").val();
     var userInputInterger = parseInt(userInput);
     var finalOutputOfArray = numberConverter(userInput, sorryName);
-    arrayOutput = numberToComputerArrayReverse(userInput);
+    arrayOutput = numberToComputerArrayReverse(userInput, sorryName);
 
     $(".message").hide();
 
