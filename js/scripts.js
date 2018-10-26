@@ -113,7 +113,9 @@ $(function() {
       $("#tooLittle").show();
     } else {
       $("#hal").removeClass();
-      $("#number-array").text(cleanArray(arrayOutput)).show();
+
+      $("#number-array").text(cleanArray(arrayOutput)).slideToggle(10*(arrayOutput.length));
+
     }
 
     event.preventDefault();
@@ -135,7 +137,7 @@ $(function() {
       $("#tooLittle").show();
     } else {
       $("#hal").removeClass();
-      $("#number-array").text(cleanArray(arrayOutput)).show();
+      $("#number-array").text(cleanArray(arrayOutput)).slideToggle(10*(arrayOutput.length));
     }
 
   });
