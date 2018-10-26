@@ -12,11 +12,19 @@
   <body>
     <div class="container">
 
-
-      <form id="formOne">
+      <form id="form-name">
+        <div class="input-group mb-3">
+         <input type="text" id="user-name" class="form-control" placeholder="Enter your name here" aria-label="Recipient's username" aria-describedby="button-addon2">
+         <div class="input-group-append">
+           <button class="btn btn-outline-secondary" type="submit">Is My Name</button></br>
+           <p id="greetings"></p>
+         </div>
+       </div>
+      </form>
+      <form id="form-main">
 
         <label for="validationDefault01">Give me a Number:</label>
-        <input type="text" class="form-control" id="romans">
+        <input type="text" class="form-control" id="user-number">
         <div id="button-div">
 
           <button class="btn btn-primary" type="submit" id="LtoG">Least to Greatest</button>

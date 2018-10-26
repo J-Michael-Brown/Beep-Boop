@@ -22,11 +22,15 @@ function parseOneOrZero(numToParse) {
 }
 
 
-function numberConverter(numToConvert) {
 
-  var computerResponse = ['"Beep!"','"Boop!"',('"I\'m sorry, Dave. I\'m afraid I can\'t do that."')]
+function numberConverter(numToConvert, userName) {
+
+  var dave = userName;
+  var computerResponse = ['"Beep!"','"Boop!"',('"I\'m sorry, ' + dave + '. I\'m afraid I can\'t do that."')]
 
   if (numToConvert > 0 && numToConvert%3 === 0) {
+    console.log(userName)
+    debugger;
     return computerResponse[2]
 
   } else if (parseOneOrZero(numToConvert) === 1) {
@@ -75,13 +79,29 @@ function cleanArray(messyArray) {
 
 $(function() {
 
-  $("#LtoG").click(function(event) {
+  var sorryName = "Dave";
+
+  $("#form-name").submit(function(event) {
+
+    var nameCheck = $("#user-name").val();
+    if (nameCheck) {
+      sorryName = nameCheck;
+      $("#greetings").text("Hi there, " + sorryName).show();
+    }
+
+
     event.preventDefault();
 
+  });
+
+  $("#LtoG").click(function(event) {
+    event.preventDefault();
+    // console.log(sorryName);
+
     var arrayOutput = [];
-    var userInput = $("#romans").val();
+    var userInput = $("#user-number").val();
     var userInputInterger = parseInt(userInput);
-    var finalOutputOfArray = numberConverter(userInput);
+    var finalOutputOfArray = numberConverter(userInput, sorryName);
     arrayOutput = numberToComputerArray(userInput);
 
     $(".message").hide();
@@ -99,9 +119,9 @@ $(function() {
     event.preventDefault();
 
     var arrayOutput = [];
-    var userInput = $("#romans").val();
+    var userInput = $("#user-number").val();
     var userInputInterger = parseInt(userInput);
-    var finalOutputOfArray = numberConverter(userInput);
+    var finalOutputOfArray = numberConverter(userInput, sorryName);
     arrayOutput = numberToComputerArrayReverse(userInput);
 
     $(".message").hide();

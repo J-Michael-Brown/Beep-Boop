@@ -1,3 +1,7 @@
 .message {
   display: none;
 }
+
+#greetings {
+  display: none;
+}
