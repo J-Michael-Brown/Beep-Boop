@@ -1,16 +1,24 @@
 // Business logic
 
 function parseOneOrZero(numToParse) {
-  var parseArray = numToParse.split("");
+  var stringNum = numToParse.toString();
+  var parseArray = [];
+  var parseArray = stringNum.split("");
 
   for (var digit = 0; digit < parseArray.length; digit++) {
     var soloDigit = parseInt(parseArray[digit]);
     if (soloDigit === 1) {
       return 1;
-    } else if (soloDigit === 0) {
+    }
+  }
+
+  for (var digit = 0; digit < parseArray.length; digit++) {
+    var soloDigit = parseInt(parseArray[digit]);
+    if (soloDigit === 0) {
       return 0;
     }
   }
+  
 }
 
 
