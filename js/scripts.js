@@ -1,17 +1,34 @@
 // Business logic
 
-function numberConverter(num) {
+function parseOneOrZero(numToParse) {
+  var parseArray = numToParse.split("");
+
+  for (var digit = 0; digit < parseArray.length; digit++) {
+    var soloDigit = parseInt(parseArray[digit]);
+    if (soloDigit === 1) {
+      return 1;
+    } else if (soloDigit === 0) {
+      return 0;
+    }
+  }
+}
+
+
+function numberConverter(numToConvert) {
 
   var computerResponse = ["Beep","Boop","I'm sorry, Dave. I'm afraid I can't do that."]
 
-  if (num > 0 && num%3 === 0) {
+  if (numToConvert > 0 && numToConvert%3 === 0) {
     return computerResponse[2]
-  } else if (num === 1) {
+
+  } else if (numToConvert === 1) {
     return computerResponse[1]
-  } else if (num === 0) {
+
+  } else if (numToConvert === 0) {
     return computerResponse[0];
+
   } else {
-    return num;
+    return numToConvert;
   }
 }
 
@@ -39,7 +56,12 @@ $(function() {
     event.preventDefault();
 
     var array = [];
-    console.log(array = numberToComputerArray(10));
+    // console.log(array = numberToComputerArray(10));
+
+    console.log(parseOneOrZero("12"));
+
+
+
     // var trojanHorse = $("#romans").val();
     //
     // $(".error-message").hide();
