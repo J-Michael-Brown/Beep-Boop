@@ -98,7 +98,6 @@ $(function() {
   });
 
   $("#LtoG").click(function(event) {
-    // console.log(sorryName);
 
     var arrayOutput = [];
     var userInput = $("#user-number").val();
