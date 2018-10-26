@@ -60,19 +60,17 @@ _Expected Results: Image of Hal will dim, greeting message will disappear, login
 
 * _Or open the page at this url: https://j-michael-brown.github.io/Beep-Boop/_
 
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
-
 ## Known Bugs
 
-_No known bugs yet. Contact me via email if you would like to report any._
+  _Text somewhat covers, and obfuscates input buttons on very small screens. Text speed becomes unbearably slow when a very high number is inputed. Contact me via email if you would like to report any I havn't found._
 
 ## Support and contact details
 
-_If you run into any issues or have questions, ideas or concerns, or if you want to make a contribution to the code. You can email me @jmichaelbrown132737@gmail.com_
+  _If you run into any issues or have questions, ideas or concerns, or if you want to make a contribution to the code. You can email me @jmichaelbrown132737@gmail.com_
 
 ## Technologies Used
 
-_Utilizes Bootstrap.css, javascript, and jQuery_
+  _Utilizes Bootstrap.css, javascript, and jQuery_
 
 ### License
 
