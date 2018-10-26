@@ -9,12 +9,24 @@
 _{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
 
 ## Specifications
-* _**When User inputs a simple "input", the expected result should be a completed simple task "expected result".**_  
-_Example Input: "input"_  
-_Example Output: "expected result"_
-* _**When User inputs a slightly more complex input "Input Two", the expected result should handle this new, and any previous specifications.**_  
-_Example Input: "Ha$~vE!"_  
-_Example Output: "have"_
+* _**Program replaces "0" with "Beep!".**_  
+_Example Input: "0"_  
+_Example Output: "Beep!"_
+* _**Program replaces "1" with "Boop!".**_  
+_Example Input: "1"_  
+_Example Output: "Boop!"_
+* _**Program replaces numbers divisible by 3 with "I'm sorry, Dave. I'm afraid I can't do that.".**_  
+_Example Input: "3"_  
+_Example Output: "I'm sorry, Dave. I'm afraid I can't do that."_
+* _**These exceptions are written from least to most important. The first exception should apply unless the second exception does, and the same with the second and third.**_  
+_Example Input: "10"_  
+_Example Output: "Boop!"_  
+_Example Input: "30"_  
+_Example Output: "I'm sorry, Dave. I'm afraid I can't do that."_
+* _**Program takes a number from a user and returns a range of numbers from 0 to the user inputted number with the aforementioned exceptions**_  
+_Example Input: "5"_  
+_Example Output: "Beep!, Boop!, 2, I'm sorry, Dave. I'm afraid I can't do that., 4, 5"_ 
+
 
 ## Setup/Installation Requirements
 
