@@ -82,13 +82,28 @@ function cleanArray(messyArray) {
 }
 
 function detectShutdown(loginName) {
-  var shutDownCommand  = ["log off", "log out", "logout", "shutdown", "off", "logoff", "quit", "q", "open pod bay doors", "open the pod bay doors", "exit"];
+  var shutDownCommand  = ["log off", "log out", "logout", "shutdown", "shut down", "off", "logoff", "quit", "q", "open pod bay doors", "open the pod bay doors", "exit", "esc", "escape"];
 
 
   for (var i = 0; i < shutDownCommand.length; i++) {
     if (loginName === shutDownCommand[i]) {
       return true;
     }
+  }
+}
+
+function makeList(interger, arrayOut, name) {
+  $(".message").hide();
+  $("form").toggle();
+  $("#do-it-again").toggle();
+  if (!interger) {
+    $("#justWrong").show();
+  } else if (interger < 0) {
+    $("#tooLittle").show();
+  } else if (interger === 2001) {
+    $("#odyssey").text("Any number besides that one " + name + "?").show();
+  } else {
+    $("#number-array").text(cleanArray(arrayOut)).slideToggle(2*(arrayOut.length));
   }
 }
 
@@ -119,29 +134,18 @@ $(function() {
 
   $("#LtoG").click(function(event) {
 
+    event.preventDefault();
 
     var arrayOutput = [];
     var userInput = $("#user-number").val();
     var userInputInterger = parseInt(userInput);
+
     var finalOutputOfArray = numberConverter(userInput, sorryName);
     arrayOutput = numberToComputerArray(userInput, sorryName);
 
-    $(".message").hide();
-    $("form").toggle();
-    $("#do-it-again").toggle();
 
-    if (!userInputInterger) {
-      $("#justWrong").show();
-    } else if (userInputInterger < 0) {
-      $("#tooLittle").show();
-    } else {
+    makeList(userInputInterger, arrayOutput, sorryName);
 
-
-      $("#number-array").text(cleanArray(arrayOutput)).slideToggle(10*(arrayOutput.length));
-
-    }
-
-    event.preventDefault();
   })
   $("#GtoL").click(function(event) {
     event.preventDefault();
@@ -149,25 +153,11 @@ $(function() {
     var arrayOutput = [];
     var userInput = $("#user-number").val();
     var userInputInterger = parseInt(userInput);
+
     var finalOutputOfArray = numberConverter(userInput, sorryName);
     arrayOutput = numberToComputerArrayReverse(userInput, sorryName);
 
-    $(".message").hide();
-    $("form").toggle();
-    $("#do-it-again").toggle();
-
-    // if (userInputInterger === 1) {
-    //   $("#hal").removeClass();
-    // } else if (userInputInterger === 0) {
-    //   $(".results#hal").addClass(".low-opacity");
-    // }
-    if (!userInputInterger) {
-      $("#justWrong").show();
-    } else if (userInputInterger < 0) {
-      $("#tooLittle").show();
-    } else {
-      $("#number-array").text(cleanArray(arrayOutput)).slideToggle(10*(arrayOutput.length));
-    }
+    makeList(userInputInterger, arrayOutput, sorryName);
 
   });
 
