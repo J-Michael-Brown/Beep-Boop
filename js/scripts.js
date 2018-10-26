@@ -21,11 +21,8 @@ function parseOneOrZero(numToParse) {
 
 }
 
-
-
 function numberConverter(numToConvert, userName) {
 
-  // debugger;
   var dave = "Dave";
   if (userName) {
     dave = userName;
@@ -71,7 +68,6 @@ function numberToComputerArrayReverse(numberString, userName) {
 }
 
 
-
 // UI logic
 
 function cleanArray(messyArray) {
@@ -83,7 +79,6 @@ function cleanArray(messyArray) {
 
 function detectShutdown(loginName) {
   var shutDownCommand  = ["log off", "log out", "logout", "shutdown", "shut down", "off", "logoff", "quit", "q", "open pod bay doors", "open the pod bay doors", "exit", "esc", "escape"];
-
 
   for (var i = 0; i < shutDownCommand.length; i++) {
     if (loginName === shutDownCommand[i]) {
@@ -129,11 +124,9 @@ $(function() {
     }
 
     event.preventDefault();
-
   });
 
   $("#LtoG").click(function(event) {
-
     event.preventDefault();
 
     var arrayOutput = [];
@@ -142,7 +135,6 @@ $(function() {
 
     var finalOutputOfArray = numberConverter(userInput, sorryName);
     arrayOutput = numberToComputerArray(userInput, sorryName);
-
 
     makeList(userInputInterger, arrayOutput, sorryName);
 

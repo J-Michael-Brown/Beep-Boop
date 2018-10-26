@@ -24,14 +24,6 @@ body {
   color: #27D921;
 }
 
-.results {
-  margin: 20px;
-  max-width: 930px;
-  position: relative;
-  text-align: center;
-  height: 100%
-}
-
 #button-div button {
   margin: 15px;
 }
@@ -48,6 +40,18 @@ body {
   color: white;
 }
 
+.results {
+  margin: 20px;
+  max-width: 930px;
+  position: relative;
+  text-align: center;
+  height: 100%
+}
+
+.result-image img {
+  width: 100%;
+}
+
 .result-image .message {
   position: absolute;
   top: 50%;
@@ -56,20 +60,17 @@ body {
   max-height: 800px;
 }
 
-.result-image img {
-  width: 100%;
-}
-
 .low-opacity {
   opacity: 0.15;
 }
 
-.high-opacity {
-  opacity: 1.0;
+.again-button {
+  text-align: left;
 }
 
 #do-it-again {
   display: none;
+  position: static;
 }
 
 .message {
