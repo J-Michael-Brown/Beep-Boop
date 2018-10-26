@@ -76,7 +76,9 @@ function numberToComputerArrayReverse(numberString, userName) {
 
 function cleanArray(messyArray) {
   var cleanString = messyArray.join(", ");
-  return cleanString;
+  var cleanedArray = [];
+  cleanedArray = cleanString.split(",")
+  return cleanedArray;
 }
 
 $(function() {
@@ -88,9 +90,8 @@ $(function() {
     var nameCheck = $("#user-name").val();
     if (nameCheck) {
       sorryName = nameCheck;
-      $("#greetings").text("Hi there, " + sorryName).show();
+      $("#greetings").text("Hi there, " + sorryName + ".").show();
     }
-
 
     event.preventDefault();
 
@@ -99,12 +100,11 @@ $(function() {
   $("#LtoG").click(function(event) {
     // console.log(sorryName);
 
-    var useName = sorryName;
     var arrayOutput = [];
     var userInput = $("#user-number").val();
     var userInputInterger = parseInt(userInput);
-    var finalOutputOfArray = numberConverter(userInput, useName);
-    arrayOutput = numberToComputerArray(userInput, useName);
+    var finalOutputOfArray = numberConverter(userInput, sorryName);
+    arrayOutput = numberToComputerArray(userInput, sorryName);
 
     $(".message").hide();
 

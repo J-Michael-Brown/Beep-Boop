@@ -1,3 +1,23 @@
+body {
+  background-color: black;
+  color: white;
+}
+.result-image {
+  position: relative;
+  text-align:
+}
+
+.result-image #number-array {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.result-image img {
+  /* position: absolute; */
+}
+
 .message {
   display: none;
 }
