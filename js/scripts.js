@@ -24,7 +24,7 @@ function parseOneOrZero(numToParse) {
 
 function numberConverter(numToConvert) {
 
-  var computerResponse = ['Beep!','Boop!','I\'m sorry, Dave. I\'m afraid I can\'t do that.']
+  var computerResponse = ['"Beep!"','"Boop!"',('"I\'m sorry, Dave. I\'m afraid I can\'t do that."')]
 
   if (numToConvert > 0 && numToConvert%3 === 0) {
     return computerResponse[2]
@@ -58,6 +58,11 @@ function numberToComputerArray(numberString) {
 
 // UI logic
 
+function cleanArray(messyArray) {
+  var cleanString = messyArray.join(", ");
+  return cleanString;
+}
+
 $(function() {
 
   $("#formOne").submit(function(event) {
@@ -79,7 +84,7 @@ $(function() {
     //   $("#tooBig").show();
     } else {
       $("#final-output").text(finalOutputOfArray).show();
-      $("#number-array").text(arrayOutput).show();
+      $("#number-array").text(cleanArray(arrayOutput)).show();
     }
 
 
