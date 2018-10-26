@@ -52,7 +52,17 @@ function numberToComputerArray(numberString) {
   return results;
 }
 
+function numberToComputerArrayReverse(numberString) {
 
+  var number = parseInt(numberString);
+  var results= [];
+
+  for (var i = 0; i <= number; i++) {
+    results.unshift(numberConverter(i));
+
+  }
+  return results;
+}
 
 
 
@@ -65,7 +75,7 @@ function cleanArray(messyArray) {
 
 $(function() {
 
-  $("#formOne").submit(function(event) {
+  $("#LtoG").click(function(event) {
     event.preventDefault();
 
     var arrayOutput = [];
@@ -80,18 +90,30 @@ $(function() {
       $("#justWrong").show();
     } else if (userInputInterger < 0) {
       $("#tooLittle").show();
-    // } else if (userInputInterger) >= 4000) {
-    //   $("#tooBig").show();
     } else {
-      $("#final-output").text(finalOutputOfArray).show();
       $("#number-array").text(cleanArray(arrayOutput)).show();
     }
 
   })
-  $("#GtoL").onclick(function(event) {
-    console.log("clicked");
+  $("#GtoL").click(function(event) {
+    event.preventDefault();
+
+    var arrayOutput = [];
+    var userInput = $("#romans").val();
+    var userInputInterger = parseInt(userInput);
+    var finalOutputOfArray = numberConverter(userInput);
+    arrayOutput = numberToComputerArrayReverse(userInput);
+
+    $(".message").hide();
+
+    if (!userInputInterger) {
+      $("#justWrong").show();
+    } else if (userInputInterger < 0) {
+      $("#tooLittle").show();
+    } else {
+      $("#number-array").text(cleanArray(arrayOutput)).show();
+    }
 
   });
 
-    // console.log()
 });
