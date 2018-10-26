@@ -112,6 +112,7 @@ $(function() {
     } else if (userInputInterger < 0) {
       $("#tooLittle").show();
     } else {
+      $("#hal").removeClass();
       $("#number-array").text(cleanArray(arrayOutput)).show();
     }
 
@@ -133,6 +134,7 @@ $(function() {
     } else if (userInputInterger < 0) {
       $("#tooLittle").show();
     } else {
+      $("#hal").removeClass();
       $("#number-array").text(cleanArray(arrayOutput)).show();
     }
 

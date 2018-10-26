@@ -9,17 +9,24 @@ body {
   height: 100%
 }
 
-.result-image #number-array {
+.result-image .message {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* padding-top: 200px; */
   max-height: 800px;
 }
 
 .result-image img {
   width: 100%;
+}
+
+.low-opacity {
+  opacity: 0.15;
+}
+
+.high-opacity {
+  opacity: 1.0;
 }
 
 .message {
