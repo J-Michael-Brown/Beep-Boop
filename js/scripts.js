@@ -18,21 +18,21 @@ function parseOneOrZero(numToParse) {
       return 0;
     }
   }
-  
+
 }
 
 
 function numberConverter(numToConvert) {
 
-  var computerResponse = ["Beep","Boop","I'm sorry, Dave. I'm afraid I can't do that."]
+  var computerResponse = ['Beep!','Boop!','I\'m sorry, Dave. I\'m afraid I can\'t do that.']
 
   if (numToConvert > 0 && numToConvert%3 === 0) {
     return computerResponse[2]
 
-  } else if (numToConvert === 1) {
+  } else if (parseOneOrZero(numToConvert) === 1) {
     return computerResponse[1]
 
-  } else if (numToConvert === 0) {
+  } else if (parseOneOrZero(numToConvert) === 0) {
     return computerResponse[0];
 
   } else {
@@ -65,8 +65,10 @@ $(function() {
 
     var array = [];
     // console.log(array = numberToComputerArray(10));
+    var userInput = $("#romans").val();
+    console.log(numberConverter(userInput));
+    console.log(numberToComputerArray(userInput));
 
-    console.log(parseOneOrZero("12"));
 
 
 
