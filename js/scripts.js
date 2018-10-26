@@ -87,10 +87,11 @@ $(function() {
       $("#number-array").text(cleanArray(arrayOutput)).show();
     }
 
-
-
-
   })
+  $("#GtoL").onclick(function(event) {
+    console.log("clicked");
+
+  });
 
     // console.log()
 });
