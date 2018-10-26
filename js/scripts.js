@@ -75,10 +75,21 @@ function numberToComputerArrayReverse(numberString, userName) {
 // UI logic
 
 function cleanArray(messyArray) {
-  var cleanString = messyArray.join(", ");
+  var cleanString = messyArray.join("$ ");
   var cleanedArray = [];
-  cleanedArray = cleanString.split(",")
+  cleanedArray = cleanString.split("$")
   return cleanedArray;
+}
+
+function detectShutdown(loginName) {
+  var shutDownCommand  = ["log off", "log out", "logout", "shutdown", "off", "logoff", "quite", "q", "open pod bay doors", "open the pod bay doors", "exit"];
+
+
+  for (var i = 0; i < shutDownCommand.length; i++) {
+    if (loginName === shutDownCommand[i]) {
+      return true;
+    }
+  }
 }
 
 $(function() {
@@ -88,7 +99,15 @@ $(function() {
   $("#form-name").submit(function(event) {
 
     var nameCheck = $("#user-name").val();
-    if (nameCheck) {
+    if (!nameCheck) {
+      sorryName = "Dave";
+    } else if (detectShutdown(nameCheck)) {
+      sorryName = nameCheck;
+      $("img").addClass("low-opacity");
+      $("#greetings").hide();
+      sorryName = "Dave";
+
+    } else {
       sorryName = nameCheck;
       $("#hal").removeClass();
       $("#greetings").text("Hello, " + sorryName + ".").show();
