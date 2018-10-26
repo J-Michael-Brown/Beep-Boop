@@ -1,41 +1,28 @@
 // Business logic
 
-function columnBuilder(numberIndex, num) {
+function numberConverter(num) {
 
-  var altNumerals = ["I","V","X","L","C","D","M"]
-  var column = numberIndex*2;
-
-  if (num === 1) {
-    return altNumerals[column];
-  } else if (num === 2) {
-    return altNumerals[column] + altNumerals [column];
-  } else if (num === 3) {
-    return altNumerals[column] + altNumerals[column] + altNumerals[column];
-  } else if (num === 4) {
-    return altNumerals[column] + altNumerals [column + 1];
-  } else if (num === 5) {
-    return altNumerals[column + 1];
-  } else if (num === 6) {
-    return altNumerals[column + 1] + altNumerals [column];
-  } else if (num === 7) {
-    return altNumerals[column + 1] + altNumerals [column] + altNumerals [column];
-  } else if (num === 8) {
-    return altNumerals[column + 1] + altNumerals[column] + altNumerals[column] + altNumerals[column];
-  } else if (num === 9) {
-    return altNumerals[column] + altNumerals [column + 2];
+  var computerResponse = ["Beep","Boop","I'm sorry, Dave. I'm afraid I can't do that."]
+  
+  if (num%3 === 0) {
+    return computerResponse[2]
+  } else if (num === 1) {
+    return computerResponse[1]
+  } else if (num === 0) {
+    return computerResponse[0];
   }
 }
 
-function numberColumnParser(numberString) {
+function numberToComputerArray(numberString) {
 
-  var reversedNumberArray = numberString.split("").reverse();
+  var number = parseInt(numberString);
   var results= [];
 
-  reversedNumberArray.forEach(function(numberToParse,i) {
-    results.push(columnBuilder(i,parseInt(numberToParse)))
+  for (var i = 0; i < number; i++) {
+    results.push(numberConverter(i));
 
-  })
-  return results.reverse().join('').toString()
+  }
+  return results;
 }
 
 
@@ -59,7 +46,7 @@ $(function() {
       $("#justWrong").show();
     } else {
       $(".charriot").slideDown(5000);
-      $("#roman-numeral").text(numberColumnParser(trojanHorse)).show();
+      $("#roman-numeral").text(numberToComputerArray(trojanHorse)).show();
 
     }
   })
